@@ -32,9 +32,16 @@ module.exports = function(digits) {
       j++
     ) {
       generatePalindromeNumbers = i * j;
-      checkPalindrome(generatePalindromeNumbers);
+      if (checkPalindrome(generatePalindromeNumbers) === true) {
+        if (generatePalindromeNumbers > palindromeNumber) {
+          factor_0 = i;
+          factor_1 = j;
+          palindromeNumber = generatePalindromeNumbers;
+        }
+      }
     }
   }
+
   function checkPalindrome(answer) {
     var str = answer.toString();
     var reverseString = str
